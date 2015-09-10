@@ -8,15 +8,15 @@
     <div> <h1>Ally's Django-Powered Blog</h1>
     </div>
 
+    {% for post in posts %}
     <div>
-        <h2><a href = ""> My First Blog Post</a></h2>
-        <p>Lorem Ipsum</p>
-    </div>
+        <p>published: {{ post.published_date }}</p>
 
-    <div>
-        <h2><a href=""> My Second Blog Post</a></h2>
-        <p>More Lorem Impsum</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+
+        <p>{{ post.text|linebreaks }}</p>
     </div>
+    {% endfor %}
 
 </body>
 </html>
